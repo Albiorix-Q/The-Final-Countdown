@@ -12,7 +12,7 @@ public class PetStats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        hygene = 100;
+        hygene = 50;
         food = 100;
         fun = 100;
     }
