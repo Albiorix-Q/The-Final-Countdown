@@ -7,7 +7,6 @@ public class UserInput : MonoBehaviour
     public Rigidbody2D rb;
 
     public float movementSpeed = 500f;
-    public float jumpSpeed = 1000f;
 
     // Start is called before the first frame update
     void Start()
@@ -20,15 +19,11 @@ public class UserInput : MonoBehaviour
     {
         if (Input.GetKey("a"))
         {
-            rb.AddForce(new Vector2(-movementSpeed * Time.deltaTime, 0));
+            rb.AddForce(new Vector2(-movementSpeed * Time.deltaTime, 0), ForceMode2D.Impulse);
         }
         if (Input.GetKey("d"))
         {
-            rb.AddForce(new Vector2(movementSpeed * Time.deltaTime, 0));
-        }
-        if (Input.GetKey("w"))
-        {
-            rb.AddForce(new Vector2(0, jumpSpeed * Time.deltaTime));
+            rb.AddForce(new Vector2(movementSpeed * Time.deltaTime, 0), ForceMode2D.Impulse);
         }
     }
 }
