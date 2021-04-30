@@ -99,6 +99,7 @@ public class PetStats : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-       shower.GetComponent<Shower>().stopDrop = false;
+        shower.GetComponent<Shower>().stopDrop = false;
+        foodTray.GetComponent<FoodWheel>().stopFoodDrop = false;
     }
 }
