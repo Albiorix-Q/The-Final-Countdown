@@ -8,7 +8,7 @@ public class PetStats : MonoBehaviour
     public int hygene, fun, food;
     public float hygeneTimer, foodTimer, funTimer;
     public Text hygeneText, foodText, funText;
-    public GameObject shower;
+    public GameObject shower, foodTray;
 
     public SpriteRenderer spriteRenderer;
     public UnityEngine.Sprite happyG;
@@ -46,7 +46,7 @@ public class PetStats : MonoBehaviour
 
         foodTimer += Time.deltaTime;
         int foodSeconds = (int)foodTimer % 60;
-        if(foodSeconds == 1)
+        if(foodSeconds >= 1 && !foodTray.GetComponent<FoodWheel>().stopFoodDrop)
         {
             food -= 1;
             foodTimer = 0.0f;
@@ -99,6 +99,7 @@ public class PetStats : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-       shower.GetComponent<Shower>().stopDrop = false;
+        shower.GetComponent<Shower>().stopDrop = false;
+        foodTray.GetComponent<FoodWheel>().stopFoodDrop = false;
     }
 }
