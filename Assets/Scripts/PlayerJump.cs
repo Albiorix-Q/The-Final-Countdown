@@ -6,6 +6,7 @@ public class PlayerJump : MonoBehaviour
 {
     // Start is called before the first frame update
     public Rigidbody2D rb;
+    public GameObject gameOver;
     public float jumpSpeed = 1000;
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -19,7 +20,7 @@ public class PlayerJump : MonoBehaviour
         if (collision.collider.tag == "Respawn")
         {
             Debug.Log("die");
-
+            gameOver.SetActive(true);
             gameObject.SetActive(false);
         }
     }

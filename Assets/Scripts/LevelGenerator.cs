@@ -6,9 +6,10 @@ public class LevelGenerator : MonoBehaviour
 {
 
     public GameObject platform;
+    public Camera camera;
 
     public int nrPlatforms;
-    public float cameraWidth = 25f;
+    public float cameraWidth = 20f;
     public float minDistance = 1f;
     public float maxDistance = 4f;
 

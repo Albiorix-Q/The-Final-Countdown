@@ -9,5 +9,6 @@ public class DeathTrigger : MonoBehaviour
     {
         Debug.Log("Die");
         player.SetActive(false);
+
     }
 }
