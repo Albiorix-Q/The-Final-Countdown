@@ -163,6 +163,7 @@ MonoBehaviour:
   hygeneText: {fileID: 1474949839}
   foodText: {fileID: 528067244}
   funText: {fileID: 892636133}
+  shower: {fileID: 1422155942}
 --- !u!212 &106821897
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -634,6 +635,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   glitchPet: {fileID: 106821895}
   petStats: {fileID: 0}
+  stopDrop: 0
 --- !u!212 &1422155944
 SpriteRenderer:
   m_ObjectHideFlags: 0
