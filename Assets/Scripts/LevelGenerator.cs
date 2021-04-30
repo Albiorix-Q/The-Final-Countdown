@@ -9,7 +9,7 @@ public class LevelGenerator : MonoBehaviour
     public Camera camera;
 
     public int nrPlatforms;
-    public float cameraWidth = 20f;
+    public float cameraWidth = 15f;
     public float minDistance = 0.5f;
     public float maxDistance = 2.5f;
 
