@@ -10,16 +10,21 @@ public class Shower : MonoBehaviour
     public bool stopDrop = false;
     Collider petCollider, showerCollider;
     float deltaTime;
+
+    public SpriteRenderer spriteRenderer;
+    public Sprite onShower;
+    public Sprite offShower;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        SpriteChanger();
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -36,5 +41,13 @@ public class Shower : MonoBehaviour
         }
     }
 
-    
+    void SpriteChanger()
+    {
+        if (stopDrop)
+        {
+            spriteRenderer.sprite = onShower;
+        }
+        else
+            spriteRenderer.sprite = offShower;
+    }
 }

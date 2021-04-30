@@ -3,7 +3,15 @@ guid: ce3bb82e77148e44bb60037163c6abf0
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - hygeneText: {instanceID: 0}
+  - foodText: {instanceID: 0}
+  - funText: {instanceID: 0}
+  - shower: {instanceID: 0}
+  - spriteRenderer: {instanceID: 0}
+  - happyG: {fileID: 21300000, guid: e2f2e0f7a0bac804685eeff032e401f2, type: 3}
+  - neutralG: {fileID: 21300000, guid: 56f0d6d3ef49152419aa07f75ccab16d, type: 3}
+  - angryG: {fileID: 21300000, guid: 1038849d3dd163145bfefa6d1a74a490, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

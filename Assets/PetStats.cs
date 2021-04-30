@@ -10,12 +10,19 @@ public class PetStats : MonoBehaviour
     public Text hygeneText, foodText, funText;
     public GameObject shower;
 
+    public SpriteRenderer spriteRenderer;
+    public Sprite happyG;
+    public Sprite neutralG;
+    public Sprite angryG;
+
     // Start is called before the first frame update
     void Start()
     {
         hygene = 50;
         food = 100;
         fun = 100;
+        
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -24,6 +31,9 @@ public class PetStats : MonoBehaviour
         hygeneText.text = "Hygene: " + hygene + "%";
         foodText.text = "Food: " + food + "%";
         funText.text = "Fun: " + fun + "%";
+
+        // Checks stats and changes sprite accordingly
+        SpriteMoodVisualizer();
 
         hygeneTimer += Time.deltaTime;
         int hygeneSeconds = (int)hygeneTimer % 60;
@@ -75,6 +85,16 @@ public class PetStats : MonoBehaviour
             funText.color = Color.yellow;
         else
             funText.color = Color.red;
+    }
+
+    void SpriteMoodVisualizer()
+    {
+        if (hygeneText.color == Color.green && foodText.color == Color.green && funText.color == Color.green)
+            spriteRenderer.sprite = happyG;
+        else if (hygeneText.color == Color.red && foodText.color == Color.red && funText.color == Color.red)
+            spriteRenderer.sprite = angryG;
+        else
+            spriteRenderer.sprite = neutralG;
     }
 
     private void OnCollisionExit2D(Collision2D collision)
