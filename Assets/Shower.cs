@@ -8,7 +8,7 @@ public class Shower : MonoBehaviour
     public GameObject glitchPet;
     public PetStats petStats;
     public bool stopDrop = false;
-    Collider petCollider, showerCollider;
+    public bool showerSelected = false;
     float deltaTime;
 
     public SpriteRenderer spriteRenderer;
@@ -25,6 +25,13 @@ public class Shower : MonoBehaviour
     void Update()
     {
         SpriteChanger();
+
+        if (Input.GetKey("s"))
+        {
+            showerSelected = true;
+        }
+        else
+            showerSelected = false;
     }
 
     private void OnCollisionStay2D(Collision2D collision)

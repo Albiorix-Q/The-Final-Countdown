@@ -8,7 +8,7 @@ public class PetStats : MonoBehaviour
     public int hygene, fun, food;
     public float hygeneTimer, foodTimer, funTimer;
     public Text hygeneText, foodText, funText;
-    public GameObject shower;
+    public GameObject shower, foodTray;
 
     public SpriteRenderer spriteRenderer;
     public Sprite happyG;
@@ -46,7 +46,7 @@ public class PetStats : MonoBehaviour
 
         foodTimer += Time.deltaTime;
         int foodSeconds = (int)foodTimer % 60;
-        if(foodSeconds == 1)
+        if(foodSeconds >= 1 && !foodTray.GetComponent<FoodWheel>().stopFoodDrop)
         {
             food -= 1;
             foodTimer = 0.0f;
