@@ -10,8 +10,8 @@ public class LevelGenerator : MonoBehaviour
 
     public int nrPlatforms;
     public float cameraWidth = 20f;
-    public float minDistance = 1f;
-    public float maxDistance = 4f;
+    public float minDistance = 0.5f;
+    public float maxDistance = 2.5f;
 
 
     // Start is called before the first frame update

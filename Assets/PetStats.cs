@@ -11,9 +11,9 @@ public class PetStats : MonoBehaviour
     public GameObject shower;
 
     public SpriteRenderer spriteRenderer;
-    public Sprite happyG;
-    public Sprite neutralG;
-    public Sprite angryG;
+    public UnityEngine.Sprite happyG;
+    public UnityEngine.Sprite neutralG;
+    public UnityEngine.Sprite angryG;
 
     // Start is called before the first frame update
     void Start()

@@ -12,8 +12,8 @@ public class Shower : MonoBehaviour
     float deltaTime;
 
     public SpriteRenderer spriteRenderer;
-    public Sprite onShower;
-    public Sprite offShower;
+    public UnityEngine.Sprite onShower;
+    public UnityEngine.Sprite offShower;
 
     // Start is called before the first frame update
     void Start()
