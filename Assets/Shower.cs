@@ -6,28 +6,35 @@ public class Shower : MonoBehaviour
 {
 
     public GameObject glitchPet;
-    PetStats petStats;
+    public PetStats petStats;
+    public bool stopDrop = false;
     Collider petCollider, showerCollider;
+    float deltaTime;
     // Start is called before the first frame update
     void Start()
     {
-        if(glitchPet != null)
-        {
-            petCollider = glitchPet.GetComponent<Collider>();
-        }
-
-        if(this != null)
-        {
-            showerCollider = GetComponent<Collider>();
-        }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (showerCollider.bounds.Intersects(petCollider.bounds))
+        
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Collision Tag"))
         {
-            petStats.hygene += 1;
+            deltaTime += 1 * Time.fixedDeltaTime;
+            if (deltaTime >= 1)
+            {
+                glitchPet.GetComponent<PetStats>().hygene += 1;
+                deltaTime--;
+            }
+            stopDrop = true;
         }
     }
+
+    
 }

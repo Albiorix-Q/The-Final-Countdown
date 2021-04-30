@@ -8,6 +8,7 @@ public class PetStats : MonoBehaviour
     public int hygene, fun, food;
     public float hygeneTimer, foodTimer, funTimer;
     public Text hygeneText, foodText, funText;
+    public GameObject shower;
 
     // Start is called before the first frame update
     void Start()
@@ -21,12 +22,12 @@ public class PetStats : MonoBehaviour
     void Update()
     {
         hygeneText.text = "Hygene: " + hygene + "%";
-        foodText.text = "Food: " + food;
+        foodText.text = "Food: " + food + "%";
         funText.text = "Fun: " + fun + "%";
 
         hygeneTimer += Time.deltaTime;
         int hygeneSeconds = (int)hygeneTimer % 60;
-        if(hygeneSeconds == 1)
+        if(hygeneSeconds >= 1 && !shower.GetComponent<Shower>().stopDrop)
         {
             hygene -= 1;
             hygeneTimer = 0.0f;
@@ -74,5 +75,10 @@ public class PetStats : MonoBehaviour
             funText.color = Color.yellow;
         else
             funText.color = Color.red;
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+       shower.GetComponent<Shower>().stopDrop = false;
     }
 }
